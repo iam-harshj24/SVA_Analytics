@@ -1420,23 +1420,18 @@ def main():
                 else:
                     st.warning("No US Products data found in the uploaded file.")
 
-        except Exception as e:
-            st.error("Error processing data")
-            st.exception(e)
+        
 
 
-        with tabs[10]:
+            with tabs[10]:
                 st.title("📊 Sales & Profit Analysis Tool")
                 st.write("Upload an Excel file containing sales and profit data to analyze the average sales and profit for a selected date range.")
 
                 Performance_Tracker(uploaded_file)
 
 
-        if has_permission('read'):
-             st.title("SVA Analytics")
-       
-    else:
-        pass
-
+        except Exception as e:
+            st.error("Error processing data")
+            st.exception(e)
 if __name__ == "__main__":
     main()
